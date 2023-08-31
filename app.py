@@ -1,7 +1,6 @@
 from flask import Flask
 from domain.user import User
 from database import db
-from flask_sqlalchemy import SQLAlchemy
 from config import Config
 from controller.user_controller import user_blueprint
 
