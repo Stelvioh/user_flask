@@ -12,7 +12,7 @@ class UserRepository:
             db.session.commit()
             return user
         except exc.IntegrityError:
-           abort(make_response( jsonify({ "message" : "Erro ao criar usuário"}),400))
+           abort(make_response( jsonify({ "message" : "Erro ao criar usuario"}),400))
 
     @staticmethod
     def get_all_users():
