@@ -2,7 +2,7 @@ from flask import Flask
 from domain.user import User
 from database import db
 from config import Config
-from controller.user_controller import UserController
+import controller.user_controller as controller_user
 
 
 def create_app():
@@ -11,7 +11,7 @@ def create_app():
 
     db.init_app(app)
     
-    app.register_blueprint(UserController.blueprint)
+    app.register_blueprint(controller_user.UserController.blueprint)
 
     with app.app_context():
         db.create_all()    
