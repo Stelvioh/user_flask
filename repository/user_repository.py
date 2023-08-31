@@ -1,3 +1,4 @@
+from flask import abort, make_response, jsonify
 from domain.user import User
 from app import db
 from sqlalchemy import exc
@@ -11,7 +12,7 @@ class UserRepository:
             db.session.commit()
             return user
         except exc.IntegrityError:
-            return User()
+           abort(make_response( jsonify({ "message" : "Erro ao criar usuário"}),400))
 
     @staticmethod
     def get_all_users():
