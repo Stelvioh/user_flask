@@ -1,5 +1,4 @@
 from flask import Blueprint, request, jsonify
-from dto.user_dto import UserDTO
 
 class UserController:
     blueprint = Blueprint('users', __name__)
