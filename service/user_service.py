@@ -18,3 +18,17 @@ class UserService:
         if not user:
             return
         return UserDTO.from_model(UserRepository.add_user(user))
+
+    @staticmethod
+    def update_user(user_id, updated_data):
+        user = UserRepository.update_user(user_id, updated_data)
+        if not user:
+            return None
+        return UserDTO.from_model(user)
+
+    @staticmethod
+    def delete_user(user_id):
+        user = UserRepository.delete_user(user_id)
+        if not user:
+            return None
+        return UserDTO.from_model(user)
